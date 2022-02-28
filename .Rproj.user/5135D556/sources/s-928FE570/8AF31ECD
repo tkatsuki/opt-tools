@@ -1,0 +1,26 @@
+{
+    "id": "8AF31ECD",
+    "path": "~/GitHub/opt-tools/Illumination_simulator/ui.R",
+    "project_path": "Illumination_simulator/ui.R",
+    "type": "r_source",
+    "hash": "134204639",
+    "contents": "",
+    "dirty": false,
+    "created": 1646025218051.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "163,0",
+        "scrollLine": "133"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1646025238,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1646025238325,
+    "read_only": false,
+    "read_only_alternatives": []
+}
