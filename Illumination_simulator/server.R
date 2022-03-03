@@ -11,7 +11,7 @@ library(shiny)
 library(ggplot2)
 
 # Define server logic required to draw a histogram
-shinyServer(function(input, output) {
+shinyServer(function(input, output, session) {
   ranges <- reactiveValues(x = NULL, y = NULL)
   output$scatterplot <- renderPlot({
     
@@ -114,7 +114,7 @@ shinyServer(function(input, output) {
   
   output$result1 <- renderText({ 
     M <- input$tube/input$obj
-    paste0("Magnification: ", M)
+    paste0("Magnification: ", round(M, digits=1))
   })
   output$result2 <- renderText({ 
     d <- input$wavelength/(2*input$na4)
@@ -148,5 +148,10 @@ shinyServer(function(input, output) {
       ranges$y <- NULL
     }
   })
+  
+  observeEvent(input$use_objective == TRUE, {
+    updateNumericInput(session, "na3", value = input$na4)
+    updateNumericInput(session, "fl3", value = input$obj)
+  }, ignoreInit = TRUE)
   
 })

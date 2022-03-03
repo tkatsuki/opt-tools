@@ -12,10 +12,11 @@ library(shinyjs)
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
   useShinyjs(),  # Set up shinyjs
-  
+  #version(ver = NULL, position = "top right"),
+  bookmarkButton(style = "position: absolute; right: 10px"),
   # Application title
   titlePanel("Critical Illumination Simulator"),
-  
+
   plotOutput("scatterplot",
              dblclick = "plot_dblclick",
              brush = brushOpts(
@@ -95,6 +96,7 @@ shinyUI(fluidPage(
     column(3,
            wellPanel(
              h4(tags$a(href="https://www.thorlabs.co.jp/navigation.cfm?guide_id=2087", "Lens 2", target="_blank", rel="noopener noreferrer")),
+             checkboxInput('use_objective','Use objective lens', value=FALSE),
              
              numericInput(inputId = "na3",
                           label = "N.A.",
